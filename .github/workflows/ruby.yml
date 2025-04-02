@@ -1,16 +1,2 @@
-            - name: Discloud API Action
-  # You may pin to the exact commit or the version.
-  # uses: marco-quicula/discloud-api-action@988e5ee043301812312ebb719ee1568d74edb75d
-  uses: marco-quicula/discloud-api-action@v0.1.1
-  with:
-    # API token for authentication
-    discloud_api_token: 
-    # Command to be executed. Supported commands: userinfo, delete, status, upload, commit
-    command: 
-    # Application ID. Required for the following commands: delete, status, commit. Can contain the value 'all' for the following commands: delete, status
-    appId: # optional
-    # File (.zip) to be uploaded. Required for the following commands: upload, commit
-    file: # optional
-    # Action to be taken if the application is already active. Required for the following command: upload
-    actionIfExists: # optional, default is ERROR
-          
+uses: marco-quicula/discloud-api-action@988e5ee043301812312ebb719ee1568d74edb75d
+concurrency: 
