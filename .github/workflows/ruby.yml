@@ -1,21 +1,16 @@
-require 'digest'
-require 'uri'
- 
-# Assume you manually set the email_address here or get it from user input
-email_address = 'someone@example.com'.downcase
- 
-# Create the SHA256 hash
-hash = Digest::SHA256.hexdigest(email_address)
- 
-# Set default URL and size parameters
-default = "https://www.example.com/default.jpg"
-size = 40
- 
-# Compile the full URL with URI encoding for the parameters
-params = URI.encode_www_form('d' => default, 's' => size)
-image_src = "https://www.gravatar.com/avatar/#{hash}?#{params}"
- 
-# This 'image_src' can now be used in an <img> tag or wherever needed
-puts image_src  # Example to output the result
-
-
+            - name: Discloud API Action
+  # You may pin to the exact commit or the version.
+  # uses: marco-quicula/discloud-api-action@988e5ee043301812312ebb719ee1568d74edb75d
+  uses: marco-quicula/discloud-api-action@v0.1.1
+  with:
+    # API token for authentication
+    discloud_api_token: 
+    # Command to be executed. Supported commands: userinfo, delete, status, upload, commit
+    command: 
+    # Application ID. Required for the following commands: delete, status, commit. Can contain the value 'all' for the following commands: delete, status
+    appId: # optional
+    # File (.zip) to be uploaded. Required for the following commands: upload, commit
+    file: # optional
+    # Action to be taken if the application is already active. Required for the following command: upload
+    actionIfExists: # optional, default is ERROR
+          
